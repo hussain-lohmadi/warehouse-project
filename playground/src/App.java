@@ -16,6 +16,8 @@ public class App {
         int u=0;
         boolean Continue = true;
 
+        String trans3 ;
+
 
        while( Continue == true )/*this loop is for the menu*/{
         System.out.println("Type the number of service you wants : ");
@@ -31,8 +33,9 @@ public class App {
            System.out.println("what serves do you want:");
            System.out.println("add new customer");
            System.out.println("view customers list");
-           trans2 = scnr2.nextLine();
-        if(trans2.equals("add new customer")){ //this loop is for choosing what serves in customers
+           Scanner scnr3 = new Scanner(System.in);
+           trans3 = scnr3.nextLine();
+        if(trans3.equals("add new customer")){ //this loop is for choosing what serves in customers
              System.out.println("How many customers do you want? ");
             int counter = scnr.nextInt();                                           
                 
@@ -51,15 +54,51 @@ public class App {
                     Customer ct1 = new Customer(nameName, ProductSN, timeOfRent, spaceOfRent);
                     customerSarray.add(ct1);
 
-        }else if (trans2.equals("view customers list")){
+                             }
+                       }
+             else if (trans3.equals("view customers list")){
+                     for (Customer ct : customerSarray) {
+                        System.out.println("Customer name: " + ct.getName() + ", Product/batch serial number: "
+                                + ct.getProductSN() + ", Time of renting (per day): " + ct.getTimeOfrent()
+                               + ", space of renting for every (4*4*4 cm): " + ct.getSpaceOfRent());
+                           }
+
             
-        }
+                  }
                
 
             }
-            break;} 
+            break; 
             //--------------------------------------------------------------------------------------------------//
-            case 2: break;
+            case 2:
+            System.out.println("Please enter the number of service 1- Desktop worker , 2- Field worker ");
+            int numOfExt4 =scnr.nextInt();
+            switch(numOfExt4){
+                case 1:{
+                   
+                    for(int w=0; w < 10 ; w++){ 
+                        Scanner iscnr = new Scanner(System.in);
+                        Scanner tscnr = new Scanner(System.in);
+                        
+                       
+                        System.out.println("Please enter the worker name " + (w+1)+": ");
+                        String wname = tscnr.nextLine();
+                        System.out.println("Enter your work shift " + (w+1)+": ");
+                        double workshift = scnr.nextDouble();
+                        System.out.println("Enter your posistion salary: " + (w+1)+": ");
+                        double salary = scnr.nextDouble();
+                        System.out.println("Enter the space of renting for every (4*4*4 cm)" + (w+1)+": ");
+                        double spaceOfRent = scnr.nextDouble();
+
+                        
+    
+                                 }
+
+                    
+                }
+                 break;
+            }
+             break;
             //-------------------------------------------------------------------------------------------------//
             case 3:
             System.out.println("Please enter the number of service 1- Reciving , 2- Exports");

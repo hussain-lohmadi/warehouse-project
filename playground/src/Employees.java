@@ -4,7 +4,7 @@ public class Employees {
     private String name;
     private double salary;
     private int workShift;
-    private String title;
+    private int ID;
     private String position;
 
     public Employees(String name, double salary, int workShift) {
@@ -36,14 +36,24 @@ public class Employees {
     public int getWorkShift() {
         return this.workShift;
     }
+    public int getID() {
+        return this.ID;
+    }
     
     public void giveRaise(double amount) {
         this.salary += amount;
     } 
 
     public void promote(String newTitle) {
-        this.title = newTitle;
         this.salary *= 1.1; 
+    }
+
+    public double calcSalary(int n){
+        this.workShift = n;
+        salary = workShift * 50;
+       
+        return salary;
+
     }
 
     

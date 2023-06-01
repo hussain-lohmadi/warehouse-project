@@ -23,6 +23,26 @@ public class Customer {
         System.out.print("enter the space of renting for every (4*4*4 cm): ");
         this.spaceOfRent = scnr.nextDouble();
     }
+    public Customer(String n,double p, double t, double s){
+      this.customerName =n;
+      this.ProductSN =p;
+      this.timeOfRent=t;
+      this.spaceOfRent =s;
+
+    }
+
+    public String getName(){
+      return customerName;
+    }
+    public double getProductSN(){
+      return ProductSN;
+    }
+    public double getTimeOfrent(){
+      return timeOfRent;
+    }
+    public double getSpaceOfRent(){
+      return spaceOfRent;
+    }
       public void calctimeOfRent(){
         
          netTime = valuOftime*timeOfRent;
