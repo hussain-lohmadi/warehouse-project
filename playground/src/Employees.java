@@ -1,11 +1,15 @@
 import java.util.Scanner;
 
-public class Employees {
+public class Employees{
     private String name;
     private double salary;
     private int workShift;
     private int ID;
     private int position;
+
+    public Employees (){
+        
+    }
 
     public Employees(String name, double salary, int workShift) {
         this.name = name;
