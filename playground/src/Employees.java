@@ -5,7 +5,7 @@ public class Employees {
     private double salary;
     private int workShift;
     private int ID;
-    private String position;
+    private int position;
 
     public Employees(String name, double salary, int workShift) {
         this.name = name;
@@ -56,35 +56,6 @@ public class Employees {
 
     }
 
-    
-        public static void main(String[] args) {
-
-
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter employee name: ");
-        String name = scanner.nextLine();
-
-        System.out.print("Enter employee salary: ");
-        double salary = scanner.nextDouble();
-
-        System.out.print("Enter employee work shift: ");
-        int workShift = scanner.nextInt();
-
-        Employees employee = new Employees(name, salary, workShift);
-
-        System.out.print("Enter Employee Postion: " );
-        String position = scanner.nextLine();
-
-        System.out.println("Employee name: " + employee.getName());
-        System.out.println("Employee salary: " + employee.getSalary());
-        System.out.println("Employee work shift: " + employee.getWorkShift());
-
-        
-
-        scanner.close();
-    }
 
         private String getposition() {
             return null;

@@ -79,20 +79,45 @@ public class App {
                     for(int w=0; w < 10 ; w++){ 
                         Scanner iscnr = new Scanner(System.in);
                         Scanner tscnr = new Scanner(System.in);
+                        Employees w = new Employees();
                         
-                       
                         System.out.println("Please enter the worker name " + (w+1)+": ");
                         String wname = tscnr.nextLine();
+                        System.out.println("enter the worker ID");
+                        int ID = iscnr.nextInt();
                         System.out.println("Enter your work shift " + (w+1)+": ");
-                        double workshift = scnr.nextDouble();
-                        System.out.println("Enter your posistion salary: " + (w+1)+": ");
-                        double salary = scnr.nextDouble();
-                        System.out.println("Enter the space of renting for every (4*4*4 cm)" + (w+1)+": ");
-                        double spaceOfRent = scnr.nextDouble();
+                        double workshift = iscnr.nextDouble();
+                        System.out.println("Enter your posistion: " + (w+1)+": ");
+                        System.out.println("1- presidant");
+                        System.out.println("2- vice presidant");
+                        System.out.println("3- secretary");
+                        System.out.println("4- IT");
+                        System.out.println("5- HR");
+                        int position = iscnr.nextInt();
+                        switch(position)
+                        case 1:
+                            salary = 10000
+                            break;
+                        case 2:
+                            salary = 7600
+                            break;
+                        case 3:
+                            salary = 5000
+                            break;
+                        case 4:
+                            salary = 6700
+                            break;
+                        case 5:
+                            salary = 1000
+                            break;
+                         }
 
-                        
-    
-                                 }
+                        for(int x=0; x < 10 ; x++){
+                            System.out.println("Employee name: " + employee.getName());
+                            test.calcSalary(workshift);
+                            System.out.println("Employee salary: " + employee.getSalary());
+                            System.out.println("Employee work shift: " + employee.getWorkShift());
+                        }
 
                     
                 }
