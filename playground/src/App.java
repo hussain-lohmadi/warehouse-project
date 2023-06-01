@@ -10,7 +10,6 @@ public class App {
         
         //these variables for case 1 
         boolean flag1 = true;
-        System.out.println("kk");
         
        
         String trans2;
@@ -18,7 +17,7 @@ public class App {
         boolean Continue = true;
 
 
-       while( Continue == true ){
+       while( Continue == true )/*this loop is for the menu*/{
         System.out.println("Type the number of service you wants : ");
         System.out.println("1- Customer ");
         System.out.println("2- Employees ");
@@ -27,9 +26,17 @@ public class App {
         System.out.println("5- Stocking ");
         int numOfService = scnr.nextInt();
         switch(numOfService){
-            case 1: System.out.println("How many customers do you want? ");
-            int counter = scnr.nextInt();                                            // this case is for Customer service
-                for(int i =0; i < counter ; i++){
+        //-------------------------------------------------------------------------------------------------//
+            case 1:{
+           System.out.println("what serves do you want:");
+           System.out.println("add new customer");
+           System.out.println("view customers list");
+           trans2 = scnr2.nextLine();
+        if(trans2.equals("add new customer")){ //this loop is for choosing what serves in customers
+             System.out.println("How many customers do you want? ");
+            int counter = scnr.nextInt();                                           
+                
+                for(int i =0; i < counter ; i++){ //this loop is for adding new customers
                     Scanner scnr1 = new Scanner(System.in);
                     
                    
@@ -43,21 +50,17 @@ public class App {
                     double spaceOfRent = scnr.nextDouble();
                     Customer ct1 = new Customer(nameName, ProductSN, timeOfRent, spaceOfRent);
                     customerSarray.add(ct1);
-                    
-                    /*System.out.println("do you want to create customer ?");
-                    trans2=scnr1.nextLine();
-                    if(trans2.equals("yes")){
-                        i =0;
-                    }else {
-                        
-                      i = 6;
-                      flag1 = false;
-                    }*/
+
+        }else if (trans2.equals("view customers list")){
+            
+        }
                
 
             }
-            break; 
+            break;} 
+            //--------------------------------------------------------------------------------------------------//
             case 2: break;
+            //-------------------------------------------------------------------------------------------------//
             case 3:
             System.out.println("Please enter the number of service 1- Reciving , 2- Exports");
             numOfExt = scnr.nextInt();
@@ -66,6 +69,7 @@ public class App {
                 case 2: break;
             }
             break;
+            //-------------------------------------------------------------------------------------------------//
             case 4:
             System.out.println("Please enter the number of service 1- Products , 2- Spicial Products");
             numOfExt2 = scnr.nextInt();
@@ -74,6 +78,7 @@ public class App {
                 case 2: break;
             }
             break;
+            //-------------------------------------------------------------------------------------------------//
             case 5: break;
         }
         Scanner scnr2 = new Scanner(System.in);
@@ -86,7 +91,7 @@ public class App {
         }
 
         
-       }
+       }// the end of menu loop
        
     }
 }
