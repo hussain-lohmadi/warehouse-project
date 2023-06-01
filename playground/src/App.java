@@ -91,31 +91,31 @@ public class App {
                     System.out.println("what serves do you want:");
                     System.out.println("1- add new worker");
                     System.out.println("2- view workers list");
-                    //Scanner scnr5 = new Scanner(System.in);
-                    trans4=scnr.nextLine();
-                    trans4=scnr.nextLine();
-                    if(trans4.equals("1")){
+                    Scanner scnr5 = new Scanner(System.in);
+                    trans4=scnr5.nextLine();
+                    if(trans4.equals("add new worker")){
                         System.out.println("How many desktop workers do you have");
                     int ecounter = scnr.nextInt();
                    
                     for(int w=0; w < ecounter ; w++){ 
                         Scanner iscnr = new Scanner(System.in);
                         Scanner tscnr = new Scanner(System.in);
-                        
-                        
+                        Scanner yscnr = new Scanner(System.in);
+                        Scanner uscnr = new Scanner(System.in);
+
                         System.out.println("Please enter the worker name " + (w+1)+": ");
                         String wname = tscnr.nextLine();
                         System.out.println("enter the worker ID");
                         int ID = iscnr.nextInt();
                         System.out.println("Enter your work shift " + (w+1)+": ");
-                        int workshift = iscnr.nextInt();
+                        int workshift = yscnr.nextInt();
                         System.out.println("Enter your posistion: " + (w+1)+": ");
                         System.out.println("1- presidant");
                         System.out.println("2- vice presidant");
                         System.out.println("3- secretary");
                         System.out.println("4- IT");
                         System.out.println("5- HR");
-                        int position = iscnr.nextInt();
+                        int position = uscnr.nextInt();
                         int salary;
                         switch(position){
                         case 1:
@@ -137,12 +137,13 @@ public class App {
 
                     }
                 }
-                    else if(trans4.equals(2))
+                    else if (trans4.equals("view workers list"))
                     { for (Employees test : EmpArray) {
-                        System.out.println("Customer name: " + test.getName() + ", Work Shift: "
+                        System.out.println("emloye name: " + test.getName() + ", Work Shift: "
                                 + test.getWorkShift() + ",  ID: " + test.getID()
                                + ", salary: " + test.getSalary());
-                           }}
+                           }
+                        }
 
                         
 
@@ -150,6 +151,8 @@ public class App {
                 
                  break;
             }
+            
+        }break;
              
             //-------------------------------------------------------------------------------------------------//
             case 3:
@@ -186,4 +189,4 @@ public class App {
        
     }
     }
-}
+
