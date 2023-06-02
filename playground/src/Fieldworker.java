@@ -1,16 +1,13 @@
 public class Fieldworker extends Employees {
-    private int position;
+    //private int position;
 
-    public Fieldworker(String name, double salary, int workShift, int position) {
-        super(name, salary, workShift);
-        this.position = position;
-    }
+    private int ID;
 
-    public void setPosition(int position) {
-        this.position = position;
-    }
+    public Fieldworker(String name /*double salary*/, int workShift, int ID) {
+        super(name , workShift, ID);
+        this.ID = ID;
+    }}
 
-    public int getPosition() {
-        return this.position;
-    }
-}
+    //public void setPosition(int position) {
+    //    this.position = position;
+    //}

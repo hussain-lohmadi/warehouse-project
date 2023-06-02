@@ -12,7 +12,7 @@ public class App {
         int numOfExt2;
         String trans = "yes";
         ArrayList<Customer> customerSarray =  new ArrayList<Customer>();
-        ArrayList<Employees> EmpArray = new ArrayList<Employees>();
+        ArrayList<Desktopworker> EmpArray = new ArrayList<Desktopworker>();
         
         
         //these variables for case 1 
@@ -24,8 +24,9 @@ public class App {
         boolean Continue = true;
 
         String trans3 ;
-    
-
+       
+        int salary = 0;
+        String title = "null";
 
 
         String trans4;
@@ -89,8 +90,8 @@ public class App {
                    
                 case 1:{
                     System.out.println("what serves do you want:");
-                    System.out.println("1- add new worker");
-                    System.out.println("2- view workers list");
+                    System.out.println("add new worker");
+                    System.out.println("view workers list");
                     Scanner scnr5 = new Scanner(System.in);
                     trans4=scnr5.nextLine();
                     if(trans4.equals("add new worker")){
@@ -116,32 +117,40 @@ public class App {
                         System.out.println("4- IT");
                         System.out.println("5- HR");
                         int position = uscnr.nextInt();
-                        int salary;
                         switch(position){
-                        case 1:
-                            salary = 10000;
-                            break;
-                        case 2:
-                            salary = 7600;
-                            break;
-                        case 3:
-                            salary = 5000;
-                            break;
-                        case 4:
-                            salary = 6700;
-                            break;
-                        case 5:
-                            salary = 1000;
-                            break;
-                         }
+                            case 1:
+                                salary = 10000;
+                                 title = "presidant";
+                                break;
+                            case 2:
+                                salary = 7600;
+                                title = "vice presidant";
+                                break;
+                            case 3:
+                                salary = 5000;
+                                title = "secretary";
+                                break;
+                            case 4:
+                                salary = 6700;
+                                title = "IT";
+                                break;
+                            case 5:
+                                salary = 1000;
+                                title = "HR";
+                                break;
+                             }
+
+                       
+                        Desktopworker DW = new Desktopworker(wname, workshift, ID);
+                          EmpArray.add(DW);
 
                     }
                 }
                     else if (trans4.equals("view workers list"))
-                    { for (Employees test : EmpArray) {
-                        System.out.println("emloye name: " + test.getName() + ", Work Shift: "
-                                + test.getWorkShift() + ",  ID: " + test.getID()
-                               + ", salary: " + test.getSalary());
+                    { for (Desktopworker DW : EmpArray) {
+                        System.out.println("emloye name: " + DW.getName() + ", Work Shift: "
+                                + DW.getWorkShift() + ",  ID: " + DW.getID()
+                               + ", salary: " + DW.calcSalary(DW.getWorkShift(),salary) + " title: " + title);
                            }
                         }
 

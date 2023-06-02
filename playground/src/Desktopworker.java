@@ -1,18 +1,11 @@
 public class Desktopworker extends Employees {
-    private int position;
+    //private int position;
 
-    public Desktopworker(String name, double salary, int workShift, int position) {
-        super(name, salary, workShift);
-        this.position = position;
-    }
+    private int ID;
 
-    public void setPosition(int position) {
-        this.position = position;
-    }
+    public Desktopworker(String name /* , double salary*/, int workShift, int ID /* ,String title*/) {
+        super(name /* ,salary*/, workShift, ID /* ,title*/);
+        this.ID = ID;
+    }}
 
-    public int getPosition() {
-        return this.position;
-    }
     
-    
-}
