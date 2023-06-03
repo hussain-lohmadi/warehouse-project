@@ -98,7 +98,7 @@ public class App {
 
             
                   }
-                  System.out.println("do you want other services in the customers section(answer in yes or no)");
+                  System.out.println("Do you want other services in the customers section(answer in yes or no)");
                      krans= snrrrr.nextLine();
                      if (krans.equals("yes")){
                         kontinue = true;
@@ -391,8 +391,13 @@ public class App {
                             int pID = scnr22.nextInt();
                             System.out.println("Enter product price "+(p+1)+": ");
                             double pprice = scnr33.nextDouble();
+                            System.out.println("Enter product hight, width and length(respectively) "+(p+1)+": ");
+                            double pheight = scnr33.nextDouble();
+                            double pwidth = scnr33.nextDouble();
+                            double plength = scnr33.nextDouble();
 
-                            Product pr1 = new Product(pname, ptype, pID, pprice);
+
+                            Product pr1 = new Product(pname, ptype, pID, pprice, pheight, pwidth, plength);
                             productarray.add(pr1);
                             pr1.printProdInfo();
                             
@@ -403,6 +408,7 @@ public class App {
                             System.out.println("Product type: "+ pr1.getType());
                             System.out.println("Product ID: "+ pr1.getID());
                             System.out.println("Product price: "+ pr1.getPrice()+"$, in riyals: "+pr1.convertToSar()+"SAR");
+                            System.out.println("Product dimnsion: "+ pr1.calculateDim(pr1.getheight(), pr1.getwidth(), pr1.getlength()));
 
                         }
                         
@@ -413,8 +419,8 @@ public class App {
                 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
                 case 2:{
                     System.out.println("Please choose your service: ");
-                    System.out.println("Add new special product");
-                    System.out.println("View special products list");
+                    System.out.println("1- Add new special product");
+                    System.out.println("2- View special products list");
                     Scanner scnr78 = new Scanner(System.in);
                     int trans10 = scnr78.nextInt();
                     if (trans10 == 1){
@@ -445,20 +451,31 @@ public class App {
                             case 5:
                             sicalname = "statue";
                             spisalprice = 10000;
+
                         }
                         System.out.println("Enter the spical product ID "+(o+1)+": ");
                         int oID = scnruqu5.nextInt();
+                        
+                        System.out.println("Enter spicial product hight, width and length(respectively) "+(o+1)+": ");
+                            double pheight = scnruqu8.nextDouble();
+                            double pwidth = scnruqu8.nextDouble();
+                            double plength = scnruqu8.nextDouble();
+                            spicialProduct sp1 = new spicialProduct(oname, oID, pheight, pwidth, plength);
+                        SpicalProductarray.add(sp1);
+                        sp1.printspicialProdInfo();
                     }
-
-                    
-
-
-
-
                 
-                
-                
-                break;}
+                }else if (trans10 == 2){
+                   for(spicialProduct sp1 : SpicalProductarray){
+                    System.out.println("Special product name: "+ sp1.getName());
+                    System.out.println("Special product ID: "+ sp1.getID());
+                    System.out.println("Special product type: "+sicalname );
+                    System.out.println("Special product price: "+spisalprice);
+                    System.out.println("Special product dimnsion: "+sp1.calculateDim(sp1.getheight(), sp1.getwidth(), sp1.getlength()));
+ 
+                   }
+
+                }
             }
             break;
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//

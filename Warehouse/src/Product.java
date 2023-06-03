@@ -15,13 +15,27 @@ public class Product {
         
     }
 
-    public Product(String n, String t ,int ID ,double p) {
+    public Product(String n, String t ,int ID ,double p,double h, double w, double l) {
         this.name = n;
         this.id = ID;
         this.price = p;
         this.type = t;
+        this.hight = h;
+        this.width = w;
+        this.length = l;
     }
 
+    public double getheight(){
+        return hight;
+    }
+
+    public double getwidth(){
+        return width;
+    }
+
+    public double getlength(){
+        return length;
+    }
     public String getName(){
         return name;
     }
@@ -59,6 +73,7 @@ public class Product {
         System.out.println("Type : "+ type );
         System.out.println("Price : "+ price + "$" );
         System.out.println("Price in riyal : " + this.convertToSar());
+        System.out.println("Dimnsion: "+ this.calculateDim(this.getheight(), this.getwidth(), this.getlength()));
 
     }
 
