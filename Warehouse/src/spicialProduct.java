@@ -1,7 +1,23 @@
 
 import java.util.Scanner;
 public class spicialProduct extends Product {
+    
+    private String spicalname ;
+    private int spicalId ;
+    private double spicalPrice;
+    private int spicalType;
+    private double specialHight;
+    private double specialWidth;
+    private double specialLength;
     private String spicialDitales;
+
+    public spicialProduct(String n, int t ,int ID ,double p) {
+        this.spicalname = n;
+        this.spicalId = ID;
+        this.spicalPrice = p;
+        this.spicalType = t;
+    }
+
 
     public spicialProduct (){
         super();

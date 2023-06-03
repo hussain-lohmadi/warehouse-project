@@ -30,23 +30,24 @@ public class App {
         ArrayList<reciving> recivingarray = new ArrayList<reciving>();
         ArrayList<exports> exportsarray = new ArrayList<exports>();
         ArrayList<Product> productarray = new ArrayList<Product>();
+        ArrayList<spicialProduct> SpicalProductarray = new ArrayList<spicialProduct>();
         
         //these variables are for moving freely in the menu
-        //boolean flag1 = true;
-        //String trans2;
-        //int u=0;
         boolean Continue = true;
-        String trans3 ;
+        int trans3 ;
         int salary = 0;
         String title = "null";
-        //int salary2= 0;
-        //String title2 = "null";
-        String trans4;
-        String trans5;
-        String trans8;
+        int trans4;
+        int trans5;
+        int trans8;
+        int dnum = 0;
+        boolean kontinue = true;
+        String krans;
+        double spisalprice = 0;
+        String sicalname = null;
 
-
-       while( Continue == true )/*this loop is for the menu*/{
+       /*this loop is for the menu*/
+       while( Continue == true ){
         System.out.println("Type the number of service you wants : ");
         System.out.println("1- Customer ");
         System.out.println("2- Employees ");
@@ -55,21 +56,23 @@ public class App {
         System.out.println("5- Stocking ");
         int numOfService = scnr.nextInt();
         switch(numOfService){
-        //-------------------------------------------------------------------------------------------------//
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
             case 1:{
+           while(kontinue == true ){
+           Scanner snrrrr = new Scanner (System.in);
            System.out.println("what serves do you want:");
-           System.out.println("add new customer");
-           System.out.println("view customers list");
+           System.out.println("1- add new customer");
+           System.out.println("2- view customers list");
            Scanner scnr3 = new Scanner(System.in);
-           trans3 = scnr3.nextLine();
-        if(trans3.equals("add new customer")){ //this loop is for choosing what serves in customers
+           trans3 = scnr3.nextInt();
+        if(trans3 == 1){ //this loop is for choosing what serves in customers
              System.out.println("How many customers do you want? ");
             int counter = scnr.nextInt();                                           
                 
                 for(int i =0; i < counter ; i++){ //this loop is for adding new customers
                     Scanner scnr1 = new Scanner(System.in);
                     
-                    double total;
+                    //double total;
                     System.out.println("Please enter the customer name " + (i+1)+": ");
                     String nameName = scnr1.nextLine();
                     System.out.println("Enter product/batch serial number " + (i+1)+": ");
@@ -83,7 +86,7 @@ public class App {
 
                              }
                        }
-             else if (trans3.equals("view customers list")){
+             else if (trans3 == 2){
                      for (Customer ct : customerSarray) {
                         System.out.println("Customer name: " + ct.getName() + ", Product/batch serial number: "
                                 + ct.getProductSN() + ", Time of renting (per day): " + ct.getTimeOfrent()
@@ -95,11 +98,21 @@ public class App {
 
             
                   }
+                  System.out.println("do you want other services in the customers section(answer in yes or no)");
+                     krans= snrrrr.nextLine();
+                     if (krans.equals("yes")){
+                        kontinue = true;
+                     }
+                     else if(krans.equals("no")){
+                        kontinue = false;
+                     }
+
+           }
                
 
             }
             break; 
-            //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
             case 2:{
                 System.out.println("Please enter the number of service 1- Desktop worker , 2- Field worker ");
             int numOfExt4 =scnr.nextInt();
@@ -107,11 +120,11 @@ public class App {
                    
                 case 1:{
                     System.out.println("what serves do you want:");
-                    System.out.println("add new worker");
-                    System.out.println("view workers list");
+                    System.out.println("1- add new worker");
+                    System.out.println("2- view workers list");
                     Scanner scnr5 = new Scanner(System.in);
-                    trans4=scnr5.nextLine();
-                    if(trans4.equals("add new worker")){
+                    trans4=scnr5.nextInt();
+                    if(trans4 == 1){
                         System.out.println("How many desktop workers do you have");
                     int ecounter = scnr.nextInt();
                    
@@ -163,7 +176,7 @@ public class App {
 
                     }
                 }
-                    else if (trans4.equals("view workers list"))
+                    else if (trans4 == 2)
                     { for (Desktopworker DW : EmpArray) {
                         System.out.println("emloye name: " + DW.getName() + ", Work Shift: "
                                 + DW.getWorkShift() + ",  ID: " + DW.getID()
@@ -173,14 +186,14 @@ public class App {
 
                  break;
             }
-            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
             case 2:
             {System.out.println("what serves do you want:");
-            System.out.println("add new worker");
-            System.out.println("view workers list");
+            System.out.println("1- add new worker");
+            System.out.println("2- view workers list");
             Scanner scnr9 = new Scanner(System.in);
-            trans4=scnr9.nextLine();
-            if(trans4.equals("add new worker")){
+            trans4=scnr9.nextInt();
+            if(trans4 == 1){
                 System.out.println("How many desktop workers do you have");
             int fcounter = scnr.nextInt();
            
@@ -234,7 +247,7 @@ public class App {
 
 
             }
-            else if (trans4.equals("view workers list"))
+            else if (trans4 == 2)
             { for (Fieldworker FW : fworkerarray) {
                 System.out.println("emloye name: " + FW.getName() + ", Work Shift: "
                         + FW.getWorkShift() + ",  ID: " + FW.getID()
@@ -259,11 +272,11 @@ public class App {
                     case 1:{
                         Scanner scnr10 = new Scanner(System.in);
                         System.out.println("Please choose your service: ");
-                        System.out.println("Add new batch");
-                        System.out.println("view batches info");
+                        System.out.println("1- Add new batch");
+                        System.out.println("2- view batches info");
                     
-                        trans5 = scnr10.nextLine();
-                        if(trans5.equals("Add new batch")){
+                        trans5 = scnr10.nextInt();
+                        if(trans5 == 1){
                             System.out.println("how many batches do you want ?");
                             int bcounter = scnr10.nextInt();
                             for(int m=0 ; m < bcounter; m++){
@@ -279,7 +292,7 @@ public class App {
                                 String bType = scnra.nextLine();
                                 System.out.println("Enter batch serial number "+(m+1)+": ");
                                 int bNum = scnrb.nextInt();
-                                int dnum = bNum;
+                                dnum = bNum;
                                 System.out.println("batch weight "+(m+1)+": ");
                                 double bWeight = scnrc.nextDouble();
                                 System.out.println("Enter batch hight, length and width (respectively) "+(m+1)+": ");
@@ -295,7 +308,7 @@ public class App {
                                 rec1.printInfo();
                                 
                             }
-                        }else if(trans5.equals("view batches info")){
+                        }else if(trans5 == 2){
                             for(reciving rec1:recivingarray){
                                 System.out.println("Batch name: "+rec1.getName()+", Batch type: "+rec1.getType()+", Batch serial number: "+rec1.getNum()+", Batch weight: "+rec1.getweight()+", Batch dimnsion: "+rec1.calculateDim(rec1.gethight(),rec1.getlength(),rec1.getwedth()));
                                 System.out.println("Batch price including fees: "+ rec1.calcproft(rec1.getprofet(),rec1.gethight(),rec1.getlength(),rec1.getwedth()));
@@ -303,31 +316,24 @@ public class App {
 
 
                             }
-
-
                         }
-
-
-
-                        break; } 
-                //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
+            break; } 
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
                 case 2:{
                     Scanner scnr20 = new Scanner(System.in);
                     Scanner scnr21 = new Scanner(System.in);
                         System.out.println("Please choose your service: ");
-                        System.out.println("fill new export report form");
-                        System.out.println("view batches info");
-                        trans8 = scnr20.nextLine();
+                        System.out.println("1- fill new export report form");
+                        System.out.println("2- view batches info");
+                        trans8 = scnr20.nextInt();
 
-                        if(trans8.equals("fill new export report form")){
+                        if(trans8 == 1){
                             System.out.println("how many form do you want to fill? ");
                             int ccounter = scnr21.nextInt();
                             for(int r=0 ; r < ccounter; r++){
                                 Scanner scnruqu = new Scanner(System.in);
                                 Scanner scnruqu1 = new Scanner(System.in);
                                 Scanner scnruqu2 = new Scanner(System.in);
-                                Scanner scnruqu3 = new Scanner(System.in);
-
                                 System.out.println("type the batch number");
                                 int cBnum = scnruqu.nextInt();
                                 System.out.println("type the batch leaving time");
@@ -340,7 +346,7 @@ public class App {
                                 expo.compares(dnum);
                                 
                             }
-                        }else if(trans8.equals("view batches info")){
+                        }else if(trans8 == 2){
                             for(exports expo:exportsarray){
                                 System.out.println("Batch number: "+expo.getbatchNumber());
                                 System.out.println("Batch time of leaving: "+ expo.gettimeOfarrive());
@@ -348,23 +354,15 @@ public class App {
 
 
                             }
-
-
-                        }else if(trans8.equals("comper batch numbers ")){
-                            
-                        
-                        
-                            
-                            
-                        }
-                        break; } 
-            }
+                        }break; 
+                    } 
+                }
 
             break;
 
             }
             
-            //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
             case 4:
             System.out.println("Please enter the number of service 1- Products , 2- Spicial Products");
             Scanner scnr66 = new Scanner(System.in);
@@ -373,11 +371,11 @@ public class App {
                 case 1:{
                     Scanner scnr77 = new Scanner(System.in);
                     System.out.println("Please choose your service: ");
-                    System.out.println("Add new product");
-                    System.out.println("View products");
+                    System.out.println("1- Add new product");
+                    System.out.println("2- View products");
 
-                    String trans9 = scnr77.nextLine();                  
-                    if(trans9.equals("Add new product")){
+                    int trans9 = scnr77.nextInt();                  
+                    if(trans9 == 1){
                         System.out.println("How many product do you want to add ");
                         int pcounter = scnr77.nextInt();
                         for(int p = 0 ; p < pcounter ; p++){
@@ -399,7 +397,7 @@ public class App {
                             pr1.printProdInfo();
                             
                         }
-                    }else if(trans9.equals("View products")){
+                    }else if(trans9 == 2){
                         for(Product pr1:productarray){
                             System.out.println("Product name: "+ pr1.getName());
                             System.out.println("Product type: "+ pr1.getType());
@@ -413,10 +411,57 @@ public class App {
                 }
                  break;
                 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
-                case 2: break;
+                case 2:{
+                    System.out.println("Please choose your service: ");
+                    System.out.println("Add new special product");
+                    System.out.println("View special products list");
+                    Scanner scnr78 = new Scanner(System.in);
+                    int trans10 = scnr78.nextInt();
+                    if (trans10 == 1){
+                        System.out.println("How many product do you want to add");
+                        int ounter = scnr78.nextInt();
+                        for(int o = 0 ; o < ounter ; o++){
+                        Scanner scnruqu3 = new Scanner(System.in);
+                        Scanner scnruqu6 = new Scanner(System.in);
+                        Scanner scnruqu5 = new Scanner(System.in);
+                        Scanner scnruqu8 = new Scanner(System.in);
+                        System.out.print("Enterthe spical product name "+(o+1)+": ");
+                        String oname = scnruqu3.nextLine();
+                        System.out.println("Enter the product type "+(o+1)+": ");
+                        int otype = scnruqu6.nextInt();
+                        switch (otype){
+                            case 1:
+                            sicalname = "exotic car";
+                            spisalprice = 15000;
+                            case 2:
+                            sicalname = "high end pc parts";
+                            spisalprice = 1000;
+                            case 3:
+                            sicalname = "jewlary";
+                            spisalprice = 2500;
+                            case 4:
+                            sicalname = "gold";
+                            spisalprice = 10000;
+                            case 5:
+                            sicalname = "statue";
+                            spisalprice = 10000;
+                        }
+                        System.out.println("Enter the spical product ID "+(o+1)+": ");
+                        int oID = scnruqu5.nextInt();
+                    }
+
+                    
+
+
+
+
+                
+                
+                
+                break;}
             }
             break;
-            //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
             case 5: break;
         }
         Scanner scnr2 = new Scanner(System.in);
@@ -432,6 +477,8 @@ public class App {
        }// the end of menu loop
        
     }
-    }
+}
+}
+    
 
 

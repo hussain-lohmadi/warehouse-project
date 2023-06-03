@@ -141,7 +141,8 @@ public class reciving {
         System.out.println("batch serial number: " + batchNumber);
         System.out.println("batch size: " + batchwaight);
         System.out.println("batch type: " + batchType);
-        System.out.println("batch daimiosion: " + batchDim);
+        System.out.println("batch daimiosion: " + this.calculateDim(this.batchHight, this.batchWaidth, this.batchLength));
+
 
  
     }
