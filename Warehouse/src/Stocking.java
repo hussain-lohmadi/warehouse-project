@@ -90,7 +90,7 @@ public class Stocking {
         this.landLordRent = LR;
         this.officeSalary = OS;
         this.bankLoan = BL;
-        this.lose = this.feildsalary - this.electronicBill - this.waterBill - this.landLordRent - this.officeSalary - this.bankLoan;
+        this.lose = this.feildsalary + this.electronicBill + this.waterBill + this.landLordRent + this.officeSalary + this.bankLoan;
         this.rentIncome = this.lose;
         return rentIncome; 
     }

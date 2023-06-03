@@ -2,6 +2,7 @@
  * studeints name :
  * Al hussain Lohmadi (leadr) 
  * Saud Fallatah
+ * Zyad Al otaibi
  */
 
 /*project description */
@@ -21,9 +22,7 @@ public class App {
     public static void main(String[] args)  {
         Scanner scnr = new Scanner(System.in);
         
-        //int numOfExt;
-        int numOfExt2;
-        String trans = "yes";
+       
         ArrayList<Customer> customerSarray =  new ArrayList<Customer>();
         ArrayList<Desktopworker> EmpArray = new ArrayList<Desktopworker>();
         ArrayList<Fieldworker> fworkerarray = new ArrayList<Fieldworker>();
@@ -31,10 +30,11 @@ public class App {
         ArrayList<exports> exportsarray = new ArrayList<exports>();
         ArrayList<Product> productarray = new ArrayList<Product>();
         ArrayList<spicialProduct> SpicalProductarray = new ArrayList<spicialProduct>();
+        ArrayList<Stocking> stokingArray =  new ArrayList<Stocking>();
         
         //these variables are for moving freely in the menu
         boolean Continue = true;
-        int trans3 ;
+        int trans ;
         int salary = 0;
         String title = "null";
         int trans4;
@@ -45,6 +45,9 @@ public class App {
         String krans;
         double spisalprice = 0;
         String sicalname = null;
+        boolean lontinu = true;
+        int numOfExt2;
+        String trans = "yes";
 
        /*this loop is for the menu*/
        while( Continue == true ){
@@ -64,8 +67,8 @@ public class App {
            System.out.println("1- add new customer");
            System.out.println("2- view customers list");
            Scanner scnr3 = new Scanner(System.in);
-           trans3 = scnr3.nextInt();
-        if(trans3 == 1){ //this loop is for choosing what serves in customers
+           trans = scnr3.nextInt();
+        if(trans == 1){ //this loop is for choosing what serves in customers
              System.out.println("How many customers do you want? ");
             int counter = scnr.nextInt();                                           
                 
@@ -86,7 +89,7 @@ public class App {
 
                              }
                        }
-             else if (trans3 == 2){
+             else if (trans == 2){
                      for (Customer ct : customerSarray) {
                         System.out.println("Customer name: " + ct.getName() + ", Product/batch serial number: "
                                 + ct.getProductSN() + ", Time of renting (per day): " + ct.getTimeOfrent()
@@ -114,6 +117,7 @@ public class App {
             break; 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
             case 2:{
+                while (lontinu == true){
                 System.out.println("Please enter the number of service 1- Desktop worker , 2- Field worker ");
             int numOfExt4 =scnr.nextInt();
             switch(numOfExt4){
@@ -260,7 +264,16 @@ public class App {
         }
 
     }
-}
+}                   Scannar scnr8 = new Scannar(System.in);
+                 System.out.println("Do you want other services in the Employees section(answer in yes or no)");
+                   krans1= scnr8.nextLine();
+                   if (krans1.equals("yes")){
+                    lontinu = true;
+                     }
+                   else if(krans1.equals("no")){
+                    lontinu = false;
+                     }
+            }
             
              
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -415,7 +428,7 @@ public class App {
                     }
 
                 }
-                 break;
+                 break;}
                 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
                 case 2:{
                     System.out.println("Please choose your service: ");
@@ -434,6 +447,11 @@ public class App {
                         System.out.print("Enterthe spical product name "+(o+1)+": ");
                         String oname = scnruqu3.nextLine();
                         System.out.println("Enter the product type "+(o+1)+": ");
+                        System.out.println("1- exotic car");
+                        System.out.println("2- high end pc");
+                        System.out.println("3- jewlary");
+                        System.out.println("4- gold");
+                        System.out.println("5- statue");
                         int otype = scnruqu6.nextInt();
                         switch (otype){
                             case 1:
@@ -476,11 +494,21 @@ public class App {
                    }
 
                 }
-            }
-            break;
+                break; }
+            
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
-            case 5: break;
-        }
+            case 5:{
+                System.out.println("Please choose your service: ");
+                System.out.println("1- Add new special product");
+                System.out.println("2- View special products list");
+                Scanner scnr78 = new Scanner(System.in);
+                int trans10 = scnr78.nextInt();
+                if (trans10 == 1)
+                
+                
+            }break;
+
+
         Scanner scnr2 = new Scanner(System.in);
         System.out.println("Continue ? (answer in yes or no)");
         trans = scnr2.nextLine();
