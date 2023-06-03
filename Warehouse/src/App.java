@@ -1,14 +1,27 @@
+/*wear house project 
+ * studeints name :
+ * Al hussain Lohmadi (leadr) 
+ * Saud Fallatah
+ */
+
+/*project description */
+/*we aim our goal to creat a program that can help the user mange his warehouse
+ for example if you have a warehouse taht is used to store milk 
+ our program will help you mange your warehouse in 5 diffreint ways
+ 1- customers (people that are storing products in your warehouse )
+ 2- emnployees (people that are working in your warehouse)
+ */
+
+//important filles for the project
 import java.util.Scanner;
-
 import org.w3c.dom.css.Counter;
-
 import java.lang.invoke.WrongMethodTypeException;
 import java.util.ArrayList;
 public class App {
     public static void main(String[] args)  {
         Scanner scnr = new Scanner(System.in);
         
-        int numOfExt;
+        //int numOfExt;
         int numOfExt2;
         String trans = "yes";
         ArrayList<Customer> customerSarray =  new ArrayList<Customer>();
@@ -17,23 +30,16 @@ public class App {
         ArrayList<reciving> recivingarray = new ArrayList<reciving>();
         ArrayList<exports> exportsarray = new ArrayList<exports>();
         
-        //these variables for case 1 
-        boolean flag1 = true;
-        
-       
-        String trans2;
-        int u=0;
+        //these variables are for moving freely in the menu
+        //boolean flag1 = true;
+        //String trans2;
+        //int u=0;
         boolean Continue = true;
-
         String trans3 ;
-       
         int salary = 0;
         String title = "null";
-
-        int salary2= 0;
-        String title2 = "null";
-
-
+        //int salary2= 0;
+        //String title2 = "null";
         String trans4;
         String trans5;
         String trans8;
@@ -301,7 +307,7 @@ public class App {
 
 
 
-                } break;
+                        break; } 
                 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
                 case 2:{
                     Scanner scnr20 = new Scanner(System.in);
@@ -311,7 +317,7 @@ public class App {
                         System.out.println("view batches info");
                         trans8 = scnr20.nextLine();
 
-                        if(trans8.equals("fill new export report form ")){
+                        if(trans8.equals("fill new export report form")){
                             System.out.println("how many form do you want to fill? ");
                             int ccounter = scnr21.nextInt();
                             for(int r=0 ; r < ccounter; r++){
@@ -344,7 +350,7 @@ public class App {
                         }else if(trans8.equals("comper batch numbers ")){
                             
                         }
-                } break;
+                        break; } 
             }
 
             break;
@@ -357,6 +363,7 @@ public class App {
             numOfExt2 = scnr.nextInt();
             switch(numOfExt2){
                 case 1: break;
+                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
                 case 2: break;
             }
             break;

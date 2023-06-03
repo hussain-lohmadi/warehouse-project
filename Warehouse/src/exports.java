@@ -1,10 +1,9 @@
 import java.util.Scanner;
 
-public class exports extends reciving {
+public class exports /*extends reciving*/ {
     private int timeOfLEAVE;
     private double shipingCost;
     private int batchNumber;
-
     public exports(int tol, double esc, int bn){
         this.timeOfLEAVE = tol;
         this.shipingCost = esc;
@@ -19,9 +18,7 @@ public class exports extends reciving {
     public int getbatchNumber(){
         return this.batchNumber;
     }
-    @Override
     public void printInfo(){
-        super.printInfo();
         System.out.println("The batch number: " + this.batchNumber);
         System.out.println("The time of leaving is : "+ this.timeOfLEAVE);
         System.out.println("The shiping cost is : "+ this.shipingCost);
