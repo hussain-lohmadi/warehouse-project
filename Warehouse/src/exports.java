@@ -1,27 +1,29 @@
 import java.util.Scanner;
 
 public class exports extends reciving {
-    private String timeOfArrive;
+    private int timeOfLEAVE;
     private double shipingCost;
+    private int batchNumber;
 
-    public exports(){
-        Scanner scnr = new Scanner(System.in);
-        System.out.println("Enter the time of arrival : ");
-        timeOfArrive = scnr.nextLine();
-        System.out.println(" Enter the shiping cost : ");
-        shipingCost = scnr.nextInt();
-        scnr.close();
+    public exports(int tol, double esc, int bn){
+        this.timeOfLEAVE = tol;
+        this.shipingCost = esc;
+        this.batchNumber = bn;
     }
-    public String gettimeOfarrive(){
-        return timeOfArrive;
+    public int gettimeOfarrive(){
+        return timeOfLEAVE;
     }
     public double getshipingCost(){
         return shipingCost;
     }
+    public int getbatchNumber(){
+        return this.batchNumber;
+    }
     @Override
     public void printInfo(){
         super.printInfo();
-        System.out.println("The time of arrival is : "+ this.timeOfArrive);
+        System.out.println("The batch number: " + this.batchNumber);
+        System.out.println("The time of leaving is : "+ this.timeOfLEAVE);
         System.out.println("The shiping cost is : "+ this.shipingCost);
     }
 

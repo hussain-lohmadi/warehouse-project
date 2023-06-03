@@ -41,7 +41,7 @@ public class reciving {
         
         
     }
-    public reciving (String batchName ,String batchType ,int batchNumber  ,double batchSize ,double batchHight ,double batchLength ,double batchWaidth){
+    public reciving (String batchName ,String batchType ,int batchNumber  ,double batchSize ,double batchHight ,double batchLength ,double batchWaidth,double profet,String batchDiscription){
      this.batchNumber = batchNumber; 
      this.batchwaight = batchSize;
      this.batchType = batchType;
@@ -50,7 +50,8 @@ public class reciving {
      this.batchWaidth = batchWaidth;
      this.batchDim = batchDim;
      this.batchName = batchName;
-     
+     this.profet = profet;
+     this.batchDiscription = batchDiscription;
     }
 
     public double getweight(){
@@ -85,6 +86,9 @@ public class reciving {
     public double getprofet(){
         return this.profet;
     }
+    public String getbatchDiscription(){
+        return this.batchDiscription;
+    }
     public double calculateDim (double h, double w, double l){
         
         this.batchHight = h;
@@ -94,13 +98,17 @@ public class reciving {
 
        return this.batchDim;
     } 
-    public double calcproft(double x, double y ){
-        x = this.profet;
-        y = reciving.fees;
-        double z;
-        z = x+y;
+    public double calcproft(double x,double h, double w, double l ){
+        this.batchHight = h;
+        this.batchWaidth = w;
+        this.batchLength = l;
+        this.batchDim = this.batchHight * this.batchWaidth * this.batchLength;
+        //double z;
+        double y = reciving.fees;
         
-        return z;
+        x = this.batchDim + y;
+        
+        return x;
     }  
 
 
