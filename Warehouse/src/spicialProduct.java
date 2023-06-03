@@ -6,7 +6,7 @@ public class spicialProduct extends Product {
     public spicialProduct (){
         super();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("What is spicial about this prduct : " );
+        System.out.println("What is spicial about this prduct: " );
         this.spicialDitales = scanner.nextLine();
         scanner.close();
     }

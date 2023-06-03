@@ -29,6 +29,7 @@ public class App {
         ArrayList<Fieldworker> fworkerarray = new ArrayList<Fieldworker>();
         ArrayList<reciving> recivingarray = new ArrayList<reciving>();
         ArrayList<exports> exportsarray = new ArrayList<exports>();
+        ArrayList<Product> productarray = new ArrayList<Product>();
         
         //these variables are for moving freely in the menu
         //boolean flag1 = true;
@@ -278,6 +279,7 @@ public class App {
                                 String bType = scnra.nextLine();
                                 System.out.println("Enter batch serial number "+(m+1)+": ");
                                 int bNum = scnrb.nextInt();
+                                int dnum = bNum;
                                 System.out.println("batch weight "+(m+1)+": ");
                                 double bWeight = scnrc.nextDouble();
                                 System.out.println("Enter batch hight, length and width (respectively) "+(m+1)+": ");
@@ -335,6 +337,7 @@ public class App {
                                 exports expo = new exports(ctimeOfLeaving, cshipingcost, cBnum);
                                 exportsarray.add(expo);
                                 expo.printInfo();
+                                expo.compares(dnum);
                                 
                             }
                         }else if(trans8.equals("view batches info")){
@@ -349,6 +352,10 @@ public class App {
 
                         }else if(trans8.equals("comper batch numbers ")){
                             
+                        
+                        
+                            
+                            
                         }
                         break; } 
             }
@@ -360,9 +367,51 @@ public class App {
             //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
             case 4:
             System.out.println("Please enter the number of service 1- Products , 2- Spicial Products");
-            numOfExt2 = scnr.nextInt();
-            switch(numOfExt2){
-                case 1: break;
+            Scanner scnr66 = new Scanner(System.in);
+            int numOfExt7 = scnr66.nextInt();
+            switch(numOfExt7){
+                case 1:{
+                    Scanner scnr77 = new Scanner(System.in);
+                    System.out.println("Please choose your service: ");
+                    System.out.println("Add new product");
+                    System.out.println("View products");
+
+                    String trans9 = scnr77.nextLine();                  
+                    if(trans9.equals("Add new product")){
+                        System.out.println("How many product do you want to add ");
+                        int pcounter = scnr77.nextInt();
+                        for(int p = 0 ; p < pcounter ; p++){
+                            Scanner scnr11 = new Scanner(System.in);
+                            Scanner scnr22 = new Scanner(System.in);
+                            Scanner scnr33 = new Scanner(System.in);
+
+                            System.out.print("Enter product name "+(p+1)+": ");
+                            String pname = scnr11.nextLine();
+                            System.out.println("Enter the product type "+(p+1)+": ");
+                            String ptype = scnr11.nextLine();
+                            System.out.println("Enter product ID "+(p+1)+": ");
+                            int pID = scnr22.nextInt();
+                            System.out.println("Enter product price "+(p+1)+": ");
+                            double pprice = scnr33.nextDouble();
+
+                            Product pr1 = new Product(pname, ptype, pID, pprice);
+                            productarray.add(pr1);
+                            pr1.printProdInfo();
+                            
+                        }
+                    }else if(trans9.equals("View products")){
+                        for(Product pr1:productarray){
+                            System.out.println("Product name: "+ pr1.getName());
+                            System.out.println("Product type: "+ pr1.getType());
+                            System.out.println("Product ID: "+ pr1.getID());
+                            System.out.println("Product price: "+ pr1.getPrice()+"$, in riyals: "+pr1.convertToSar()+"SAR");
+
+                        }
+                        
+                    }
+
+                }
+                 break;
                 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
                 case 2: break;
             }

@@ -11,41 +11,26 @@ public class Product {
     private double productDimsion = 0;
     private double priceInRiyals=0;
 
-
-    
-
     public Product (){
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter product name: ");
-        this.name = scanner.nextLine();
-
-        System.out.print("Enter product ID: ");
-        this.id = scanner.nextInt();
-
-        System.out.print("Enter product price: ");
-        this.price = scanner.nextDouble();
-
-        System.out.print("Enter product type: ");
-        this.type = scanner.nextLine();
-
-        scanner.close();
-
-
+        
     }
 
-    
-    
-    public Product(String n, int ID, double p, String t) {
+    public Product(String n, String t ,int ID ,double p) {
         this.name = n;
         this.id = ID;
         this.price = p;
         this.type = t;
     }
 
-
-
-    
+    public String getName(){
+        return name;
+    }
+    public String getType(){
+        return type;
+    }
+    public int getID(){
+        return id;
+    }
      
     public double calculateDim (double h, double w, double l){
         hight = h;
@@ -61,8 +46,8 @@ public class Product {
     public double getPrice(){
         return price;
     }
-    public double convertToSar(double price){
-        this.priceInRiyals = 3.75 * price;
+    public double convertToSar(){
+        this.priceInRiyals = 3.75 * this.getPrice();
         return this.priceInRiyals;
         
     }
@@ -73,8 +58,7 @@ public class Product {
         System.out.println("ID : "+ id );
         System.out.println("Type : "+ type );
         System.out.println("Price : "+ price + "$" );
-        System.out.println("Price in riyal : " + priceInRiyals);
-        System.out.println("Product Diminsion : "+ productDimsion );
+        System.out.println("Price in riyal : " + this.convertToSar());
 
     }
 

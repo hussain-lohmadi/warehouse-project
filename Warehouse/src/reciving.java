@@ -14,9 +14,13 @@ public class reciving {
     private double profet;
     private String batchDiscription;
     private static int fees= 5;
+    
+    
+    
+    
 
     public reciving (){
-        Scanner scanner = new Scanner(System.in);
+       /*  Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter batch name: ");
         this.batchName = scanner.nextLine();
@@ -36,7 +40,7 @@ public class reciving {
         this.batchWaidth = scanner.nextDouble();
 
         System.out.print("Enter batch profet");
-        this.profet = scanner.nextDouble();
+        this.profet = scanner.nextDouble();*/
 
         
         
@@ -110,6 +114,26 @@ public class reciving {
         
         return x;
     }  
+    public boolean equal (int x, int y){
+        y = this.batchNumber;
+        if ((this.batchNumber == x)){
+            System.out.println("There are no errors");
+            return true;
+        }else{
+            System.out.println("There is an error");
+            return false;
+        }
+
+    }
+
+    public void compares (int x){
+        if(this.getNum() == x){
+            System.out.println("numbers are correct");
+        }else{
+            System.out.println("numbers are not correct");
+        }
+
+    }
 
 
     public void printInfo(){
