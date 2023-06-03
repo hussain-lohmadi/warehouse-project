@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class App {
     public static void main(String[] args)  {
         Scanner scnr = new Scanner(System.in);
+        Scanner scnr2993 = new Scanner(System.in);
         
        
         ArrayList<Customer> customerSarray =  new ArrayList<Customer>();
@@ -35,6 +36,7 @@ public class App {
         //these variables are for moving freely in the menu
         boolean Continue = true;
         int trans ;
+        String trans1000 ;
         int salary = 0;
         String title = "null";
         int trans4;
@@ -47,8 +49,9 @@ public class App {
         String sicalname = null;
         boolean lontinu = true;
         int numOfExt2;
-        String trans = "yes";
-
+        String krans1 ;
+       
+       
        /*this loop is for the menu*/
        while( Continue == true ){
         System.out.println("Type the number of service you wants : ");
@@ -264,7 +267,7 @@ public class App {
         }
 
     }
-}                   Scannar scnr8 = new Scannar(System.in);
+}                   Scanner scnr8 = new Scanner(System.in);
                  System.out.println("Do you want other services in the Employees section(answer in yes or no)");
                    krans1= scnr8.nextLine();
                    if (krans1.equals("yes")){
@@ -376,7 +379,7 @@ public class App {
             }
             
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
-            case 4:
+            case 4:{
             System.out.println("Please enter the number of service 1- Products , 2- Spicial Products");
             Scanner scnr66 = new Scanner(System.in);
             int numOfExt7 = scnr66.nextInt();
@@ -428,7 +431,7 @@ public class App {
                     }
 
                 }
-                 break;}
+                 break;
                 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
                 case 2:{
                     System.out.println("Please choose your service: ");
@@ -495,35 +498,72 @@ public class App {
 
                 }
                 break; }
+            }
+        }
+                
             
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
             case 5:{
                 System.out.println("Please choose your service: ");
-                System.out.println("1- Add new special product");
+                System.out.println("1- Add new report");
                 System.out.println("2- View special products list");
-                Scanner scnr78 = new Scanner(System.in);
-                int trans10 = scnr78.nextInt();
-                if (trans10 == 1)
+                Scanner scnr79 = new Scanner(System.in);
+                int trans10 = scnr79.nextInt();
+                if (trans10 == 1){
+                    System.out.println("How many reports do you want to add");
+                    int scounter =scnr79.nextInt();
+                    for(int s =0; s<scounter;s++){
+                        Scanner sccnr = new Scanner(System.in);
+                        Scanner sccnr1 = new Scanner(System.in);
+                        Scanner sccnr2 = new Scanner(System.in);
+                        System.out.println("Enter your gain: ");
+                        double gain = sccnr1.nextDouble();
+                        System.out.println("Enter the feild salary: ");
+                        double feildsalary = sccnr.nextDouble();
+                        System.out.println("Enter the electronic bill: ");
+                        double electronicBill = sccnr1.nextDouble();
+                        System.out.println("Enter the water bill: ");
+                        double waterBill = sccnr.nextDouble();
+                        System.out.println("Enter the land lord rent: ");
+                        double landLordRent = sccnr2.nextDouble();
+                        System.out.println("Enter the office salary: ");
+                        double officeSalary = sccnr.nextDouble();
+                        System.out.println("Enter the bank loan: ");
+                        double bankLoan = sccnr1.nextDouble();
+                        System.out.println("Enter the rent income: ");
+                        double rentincome =sccnr2.nextDouble();
+                        Stocking stk1 = new Stocking(feildsalary, electronicBill, waterBill, landLordRent, officeSalary, landLordRent, rentincome, gain);
+                        stokingArray.add(stk1);
+                    }
+                    for(Stocking stk1 : stokingArray){
+                        System.out.println("The Toatal loss is: "+stk1.calcTotalLoss(stk1.getfeildsalary(), stk1.getelectronicbill(), stk1.getwaterbill(), stk1.getlandlordrent(), stk1.getofficesalary(), stk1.getlandlordrent(), stk1.getrentincome()));
+                        System.out.println("The total gains is: "+(stk1.calcTotalLoss(stk1.getfeildsalary(), stk1.getelectronicbill(), stk1.getwaterbill(), stk1.getlandlordrent(), stk1.getofficesalary(), stk1.getlandlordrent(), stk1.getrentincome())-stk1.getGain()));
+                    }
+
+                    
+                
+                }
                 
                 
             }break;
 
 
-        Scanner scnr2 = new Scanner(System.in);
-        System.out.println("Continue ? (answer in yes or no)");
-        trans = scnr2.nextLine();
-        if(trans.equals("yes")){
-            Continue = true;
-        }else if (trans.equals("no")){
-            Continue = false;
-        }
-
         
-       }// the end of menu loop
+        
+        
+       }System.out.println("Continue ? (answer in yes or no)");
+       trans1000 = scnr2993.nextLine();
+       if(trans1000.equals("yes")){
+           Continue = true;
+       }else if (trans1000.equals("no")){
+           Continue = false;
+       }
+// the end of menu loop
        
     }
 }
 }
+
     
 
 

@@ -13,23 +13,17 @@ public class Stocking {
     private double bankLoan;
 
     public Stocking(){
-        Scanner scnr = new Scanner(System.in);
-        System.out.println("Enter the total gains : ");
-        this.gain = scnr.nextDouble();
-        System.out.println("Enter the feild salary : ");
-        this.feildsalary = scnr.nextDouble();
-        System.out.println("Enter the electronic bill : ");
-        this.electronicBill = scnr.nextDouble();
-        System.out.println("Enter the water bill : ");
-        this.waterBill = scnr.nextDouble();
-        System.out.println("Enter the land lord rent : ");
-        this.landLordRent = scnr.nextDouble();
-        System.out.println("Enter the office salary : ");
-        this.officeSalary = scnr.nextDouble();
-        System.out.println("Enter the bank loan : ");
-        this.bankLoan = scnr.nextDouble();
-
-        scnr.close();
+       
+    }
+    public Stocking(double fe, double el, double wa, double la, double of, double re, double ba, double g){
+        this.feildsalary = fe;
+        this.electronicBill=el;
+        this.waterBill=wa;
+        this.landLordRent=la;
+        this.officeSalary=of;
+        this.rentIncome=re;
+        this.bankLoan=ba;
+        this.gain=g;
     }
 
     public double getGain(){
@@ -64,16 +58,22 @@ public class Stocking {
         return bankLoan;
     }
 
-    public Stocking(double g, double l){
-        this.gain = g;
-        this.lose = l;
+    public double getrentincome(){
+        return rentIncome;
     }
 
-    public double calcRentincome(double g, double l ){
-        this.gain = g;
-        this.lose = l;
-        this.networth = this.gain + this.lose;
-        return networth;
+    
+
+    public double calcTotalLoss(double fe, double el, double wa, double la, double of, double re, double ba){
+        this.feildsalary = fe;
+        this.electronicBill=el;
+        this.waterBill=wa;
+        this.landLordRent=la;
+        this.officeSalary=of;
+        this.rentIncome=re;
+        this.bankLoan=ba;
+        double loss = (feildsalary+electronicBill+waterBill+landLordRent+officeSalary+rentIncome+bankLoan);
+        return loss;
     }
 
     public void PrintStockingDetails(){
