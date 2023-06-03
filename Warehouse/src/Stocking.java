@@ -66,7 +66,7 @@ public class Stocking {
         this.landLordRent=la;
         this.officeSalary=of;
         this.bankLoan=ba;
-        double loss = (feildsalary+electronicBill+waterBill+landLordRent+officeSalary+bankLoan);
+        double loss =feildsalary+electronicBill+waterBill+landLordRent+officeSalary+bankLoan;
         return loss;
     }
 

@@ -78,6 +78,13 @@ public class Employees{
         return salary;
 
     }
+    public void printEmployeesInfo (){
+        System.out.println("Name :"+ this.getName() );
+        System.out.println("ID: "+ this.getID() );
+        System.out.println("Work shift: "+ this.getWorkShift());
+        
+    }
+
 
 
         

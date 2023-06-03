@@ -4,6 +4,8 @@
  * Saud Fallatah
  * Zyad Al otaibi
  * Ali Aqeel
+ * Murad Al otaibi
+ * Hamdan Al Zahrani
  */
 
 /*project description */
@@ -15,16 +17,30 @@
  3- reciving and eports (is to right forms about how many products (in bulks) have came and left thw warehouse)
  4- ptoducts and spicial products (to write a form about single product and spicial product/like gold/)
  5- Stoking (is to check how much the warehouse make and how much it lose)
+
+
+
+ Stocking has methods to calculate the loss and gains
+ some methods are shared between classes that are not connected but do the same funcation 
  */
 
-//important filles for the project
+
+
+ 
 import java.util.Scanner;
-//import org.w3c.dom.css.Counter;
-//import java.lang.invoke.WrongMethodTypeException;
+
+import javax.sound.midi.SysexMessage;
+
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 public class App {
     public static void main(String[] args)  {
+        System.out.println("1- customers (people that are storing products in your warehouse)");
+        System.out.println("2- emnployees (people that are working in your warehouse)");
+        System.out.println("3- reciving and eports (is to right forms about how many products (in bulks) have came and left thw warehouse)");
+        System.out.println("4- ptoducts and spicial products (to write a form about single product and spicial product/like gold/)");
+        System.out.println("5- Stoking (is to check how much the warehouse make and how much it lose)");
         Scanner scnr = new Scanner(System.in);
         Scanner scnr2993 = new Scanner(System.in);
         
@@ -58,6 +74,7 @@ public class App {
         boolean numOfExt3 = true; 
         boolean montinu = true; 
         String kran555 ;
+        String kran477;
         Scanner snr511 = new Scanner(System.in);
 
        /*this loop is for the menu*/
@@ -100,8 +117,8 @@ public class App {
 
                              }
                        }
-             else if (trans == 2){
-                     for (Customer ct : customerSarray) {
+             else if (trans == 2){ //this loop is for choosing what serves in customers
+                     for (Customer ct : customerSarray) { //this loop for printing
                         System.out.println("Customer name: " + ct.getName() + ", Product/batch serial number: "
                                 + ct.getProductSN() + ", Time of renting (per day): " + ct.getTimeOfrent()
                                + ", space of renting for every (4*4*4 cm): " + ct.getSpaceOfRent() + ", the net time = " + ct.calctimeOfRent(ct.getTimeOfrent())+ ", the net space = " +ct.calcspaceOfRent(ct.getSpaceOfRent())+", the total is: "+ct.clactotal(ct.calcspaceOfRent(ct.getSpaceOfRent()),ct.calctimeOfRent(ct.getTimeOfrent()),5 )) ;
@@ -141,7 +158,7 @@ public class App {
                     System.out.println("2- view workers list");
                     Scanner scnr5 = new Scanner(System.in);
                     trans4=scnr5.nextInt();
-                    if(trans4 == 1){
+                    if(trans4 == 1){ //this loop is for choosing what serves in Employees
                         System.out.println("How many desktop workers do you have");
                     int ecounter = scnr.nextInt();
                    
@@ -163,26 +180,32 @@ public class App {
                         System.out.println("3- secretary");
                         System.out.println("4- IT");
                         System.out.println("5- HR");
+                        Scanner scnnr = new Scanner(System.in);
                         int position = uscnr.nextInt();
                         switch(position){
                             case 1:
-                                salary = 10000;
+                            System.out.println("Enter the salary");
+                                salary = scnnr.nextInt();
                                  title = "presidant";
                                 break;
                             case 2:
-                                salary = 7600;
+                            System.out.println("Enter the salary");
+                            salary = scnnr.nextInt();
                                 title = "vice presidant";
                                 break;
                             case 3:
-                                salary = 5000;
+                            System.out.println("Enter the salary");
+                            salary = scnnr.nextInt();
                                 title = "secretary";
                                 break;
                             case 4:
-                                salary = 6700;
+                            System.out.println("Enter the salary");
+                            salary = scnnr.nextInt();
                                 title = "IT";
                                 break;
                             case 5:
-                                salary = 1000;
+                            System.out.println("Enter the salary");
+                            salary = scnnr.nextInt();
                                 title = "HR";
                                 break;
                              }
@@ -232,26 +255,32 @@ public class App {
                 System.out.println("3- Crain driver");
                 System.out.println("4- Product counter");
                 System.out.println("5- Security");
+                Scanner scnrr = new Scanner(System.in);
                 int position = jscnr.nextInt();
                 switch(position){
                     case 1:
-                        salary = 5000;
+                    System.out.println("Enter the salary");
+                    salary = scnrr.nextInt();
                          title = "Distributor";
                         break;
                     case 2:
-                        salary = 8000;
+                    System.out.println("Enter the salary");
+                    salary = scnrr.nextInt();
                         title = "Supervisor";
                         break;
                     case 3:
-                        salary = 5000;
+                    System.out.println("Enter the salary");
+                    salary = scnrr.nextInt();
                         title = "Crain driver";
                         break;
                     case 4:
-                        salary = 3700;
+                    System.out.println("Enter the salary");
+                    salary = scnrr.nextInt();
                         title = "Product counter";
                         break;
                     case 5:
-                        salary = 1500;
+                    System.out.println("Enter the salary");
+                    salary = scnrr.nextInt();
                         title = "Security";
                         break;
                      }
@@ -266,7 +295,7 @@ public class App {
             }
             else if (trans4 == 2)
             { for (Fieldworker FW : fworkerarray) {
-                System.out.println("emloye name: " + FW.getName() + ", Work Shift: "
+                System.out.println("employee name: " + FW.getName() + ", Work Shift: "
                         + FW.getWorkShift() + ",  ID: " + FW.getID()
                        + ", salary: " + FW.calcSalary(FW.getWorkShift(),salary) + " title: " + title);
                    }
@@ -276,17 +305,18 @@ public class App {
             
         }
 
-    }
-}                   Scanner scnr8 = new Scanner(System.in);
-                 System.out.println("Do you want other services in the Employees section(answer in yes or no)");
-                   krans1= scnr8.nextLine();
-                   if (krans1.equals("yes")){
-                    lontinu = true;
-                     }
-                   else if(krans1.equals("no")){
-                    lontinu = false;
-                     }
-            }
+    } Scanner scnr889 = new Scanner(System.in);
+    System.out.println("Do you want other services in the Employees section(answer in yes or no)");
+      krans1= scnr889.nextLine();
+      if (krans1.equals("yes")){
+       lontinu = true;
+        }
+      else if(krans1.equals("no")){
+       lontinu = false;
+        }
+}break;
+}           
+       
             
              
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -295,7 +325,7 @@ public class App {
                 System.out.println("Please enter the number of service 1- Reciving , 2- Exports");
                 Scanner scnr69 = new Scanner(System.in);
                 int numOfExt6 = scnr69.nextInt();
-                switch(numOfExt6){
+                switch(numOfExt6){//this loop is for choosing what serves in Reciving/Exports
                     case 1:{
                         Scanner scnr10 = new Scanner(System.in);
                         System.out.println("Please choose your service: ");
@@ -390,19 +420,19 @@ public class App {
             }
             Scanner scnrExt = new Scanner(System.in);
             String krans3; 
-            System.out.println("Do you want other services in the Employees section(answer in yes or no)");
+            System.out.println("Do you want other services in the Reciving/Exports section(answer in yes or no)");
             krans3= scnrExt.nextLine();
               if (krans3.equals("yes")){
                 numOfExt2 = true;
                 }
               else if(krans3.equals("no")){
                 numOfExt2 = false;
-                }
+                }break;
         
         } 
             
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
-            case 4:{
+            case 4:{//this loop is for choosing what serves in Products/Special Products
             while(numOfExt3 == true){
             System.out.println("Please enter the number of service 1- Products , 2- Spicial Products");
             Scanner scnr66 = new Scanner(System.in);
@@ -479,23 +509,34 @@ public class App {
                         System.out.println("3- jewlary");
                         System.out.println("4- gold");
                         System.out.println("5- statue");
+                        Scanner sscnr = new Scanner(System.in);
                         int otype = scnruqu6.nextInt();
                         switch (otype){
                             case 1:
+                            System.out.println("Set a price: ");
                             sicalname = "exotic car";
-                            spisalprice = 15000;
+                            spisalprice = sscnr.nextInt();
+                            break;
                             case 2:
+                            System.out.println("Set a price: ");
                             sicalname = "high end pc parts";
-                            spisalprice = 1000;
+                            spisalprice = sscnr.nextInt();
+                            break;
                             case 3:
+                            System.out.println("Set a price: ");
                             sicalname = "jewlary";
-                            spisalprice = 2500;
+                            spisalprice = sscnr.nextInt();
+                            break;
                             case 4:
+                            System.out.println("Set a price: ");
                             sicalname = "gold";
-                            spisalprice = 10000;
+                            spisalprice = sscnr.nextInt();
+                            break;
                             case 5:
+                            System.out.println("Set a price: ");
                             sicalname = "statue";
-                            spisalprice = 10000;
+                            spisalprice = sscnr.nextInt();
+                            break;
 
                         }
                         System.out.println("Enter the spical product ID "+(o+1)+": ");
@@ -523,27 +564,27 @@ public class App {
                 }
                 break; }
             }
-        }
-        Scanner scnrExt3 = new Scanner(System.in);
-        String kran4;
-        System.out.println("Do you want other services in the Employees section(answer in yes or no)");
-        kran4= scnrExt3.nextLine();
-          if (kran4.equals("yes")){
-            numOfExt2 = true;
-            }
-          else if(kran4.equals("no")){
-            numOfExt2 = false;
-            } 
-    }
+            Scanner scnrExt377 = new Scanner(System.in);
+           
+            System.out.println("Do you want other services in the Products section(answer in yes or no)");
+            kran477= scnrExt377.nextLine();
+              if (kran477.equals("yes")){
+                numOfExt3 = true;
+                }
+              else if(kran477.equals("no")){
+                numOfExt3 = false;
+                }  } break;
+        
+                        }             
                 
             
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
     case 5:{
-        while(montinu == true){
+        while(montinu == true){//this loop is for choosing what serves in Stocking
         try {
             System.out.println("Please choose your service: ");
             System.out.println("1- Add new report");
-            System.out.println("2- View special products list");
+            System.out.println("2- View Stocking list");
             Scanner scnr79 = new Scanner(System.in);
             int trans10 = scnr79.nextInt();
             if (trans10 == 1) {
@@ -567,16 +608,17 @@ public class App {
                     double officeSalary = sccnr.nextDouble();
                     System.out.println("Enter the bank loan: ");
                     double bankLoan = sccnr1.nextDouble();
-                    System.out.println("Enter the rent income: ");
-                    double rentIncome = sccnr2.nextDouble();
                     Stocking stk1 = new Stocking(fieldSalary, electronicBill, waterBill, landlordRent, officeSalary, bankLoan, gain);
                     stokingArray.add(stk1);
                     
                 }
+                
+            }else if(trans10 == 2){
                 for (Stocking stk1 : stokingArray) {
                     System.out.println("The Total loss is: " + stk1.calcTotalLoss(stk1.getfeildsalary(), stk1.getelectronicbill(), stk1.getwaterbill(), stk1.getlandlordrent(), stk1.getofficesalary(), stk1.getbankloan()));
                     System.out.println("The total gains is: " + (stk1.getGain() - stk1.calcTotalLoss(stk1.getfeildsalary(), stk1.getelectronicbill(), stk1.getwaterbill(), stk1.getlandlordrent(), stk1.getofficesalary(), stk1.getbankloan())));
                 }
+
             }
         } catch (InputMismatchException e) {
             System.out.println("Invalid input. Please enter a valid number.");
@@ -595,10 +637,6 @@ public class App {
         
     }
          
-
-
-
-
 
 }System.out.println("Continue ? (answer in yes or no)");
 trans1000 = scnr2993.nextLine();
