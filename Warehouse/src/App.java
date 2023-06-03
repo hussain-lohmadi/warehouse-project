@@ -3,6 +3,7 @@
  * Al hussain Lohmadi (leadr) 
  * Saud Fallatah
  * Zyad Al otaibi
+ * Ali Aqeel
  */
 
 /*project description */
@@ -11,13 +12,17 @@
  our program will help you mange your warehouse in 5 diffreint ways
  1- customers (people that are storing products in your warehouse )
  2- emnployees (people that are working in your warehouse)
+ 3- reciving and eports (is to right forms about how many products (in bulks) have came and left thw warehouse)
+ 4- ptoducts and spicial products (to write a form about single product and spicial product/like gold/)
+ 5- Stoking (is to check how much the warehouse make and how much it lose)
  */
 
 //important filles for the project
 import java.util.Scanner;
-import org.w3c.dom.css.Counter;
-import java.lang.invoke.WrongMethodTypeException;
+//import org.w3c.dom.css.Counter;
+//import java.lang.invoke.WrongMethodTypeException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 public class App {
     public static void main(String[] args)  {
         Scanner scnr = new Scanner(System.in);
@@ -48,10 +53,13 @@ public class App {
         double spisalprice = 0;
         String sicalname = null;
         boolean lontinu = true;
-        int numOfExt2;
+        boolean  numOfExt2 = true;
         String krans1 ;
-       
-       
+        boolean numOfExt3 = true; 
+        boolean montinu = true; 
+        String kran555 ;
+        Scanner snr511 = new Scanner(System.in);
+
        /*this loop is for the menu*/
        while( Continue == true ){
         System.out.println("Type the number of service you wants : ");
@@ -62,7 +70,7 @@ public class App {
         System.out.println("5- Stocking ");
         int numOfService = scnr.nextInt();
         switch(numOfService){
-    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
             case 1:{
            while(kontinue == true ){
            Scanner snrrrr = new Scanner (System.in);
@@ -117,7 +125,9 @@ public class App {
                
 
             }
-            break; 
+            break;
+
+        
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
             case 2:{
                 while (lontinu == true){
@@ -193,7 +203,7 @@ public class App {
 
                  break;
             }
-    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
             case 2:
             {System.out.println("what serves do you want:");
             System.out.println("1- add new worker");
@@ -281,6 +291,7 @@ public class App {
              
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
             case 3:{
+                while(numOfExt2 == true){
                 System.out.println("Please enter the number of service 1- Reciving , 2- Exports");
                 Scanner scnr69 = new Scanner(System.in);
                 int numOfExt6 = scnr69.nextInt();
@@ -334,7 +345,7 @@ public class App {
                             }
                         }
             break; } 
-    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
                 case 2:{
                     Scanner scnr20 = new Scanner(System.in);
                     Scanner scnr21 = new Scanner(System.in);
@@ -377,9 +388,22 @@ public class App {
             break;
 
             }
+            Scanner scnrExt = new Scanner(System.in);
+            String krans3; 
+            System.out.println("Do you want other services in the Employees section(answer in yes or no)");
+            krans3= scnrExt.nextLine();
+              if (krans3.equals("yes")){
+                numOfExt2 = true;
+                }
+              else if(krans3.equals("no")){
+                numOfExt2 = false;
+                }
+        
+        } 
             
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
             case 4:{
+            while(numOfExt3 == true){
             System.out.println("Please enter the number of service 1- Products , 2- Spicial Products");
             Scanner scnr66 = new Scanner(System.in);
             int numOfExt7 = scnr66.nextInt();
@@ -432,7 +456,7 @@ public class App {
 
                 }
                  break;
-                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
                 case 2:{
                     System.out.println("Please choose your service: ");
                     System.out.println("1- Add new special product");
@@ -500,69 +524,94 @@ public class App {
                 break; }
             }
         }
+        Scanner scnrExt3 = new Scanner(System.in);
+        String kran4;
+        System.out.println("Do you want other services in the Employees section(answer in yes or no)");
+        kran4= scnrExt3.nextLine();
+          if (kran4.equals("yes")){
+            numOfExt2 = true;
+            }
+          else if(kran4.equals("no")){
+            numOfExt2 = false;
+            } 
+    }
                 
             
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
-            case 5:{
-                System.out.println("Please choose your service: ");
-                System.out.println("1- Add new report");
-                System.out.println("2- View special products list");
-                Scanner scnr79 = new Scanner(System.in);
-                int trans10 = scnr79.nextInt();
-                if (trans10 == 1){
-                    System.out.println("How many reports do you want to add");
-                    int scounter =scnr79.nextInt();
-                    for(int s =0; s<scounter;s++){
-                        Scanner sccnr = new Scanner(System.in);
-                        Scanner sccnr1 = new Scanner(System.in);
-                        Scanner sccnr2 = new Scanner(System.in);
-                        System.out.println("Enter your gain: ");
-                        double gain = sccnr1.nextDouble();
-                        System.out.println("Enter the feild salary: ");
-                        double feildsalary = sccnr.nextDouble();
-                        System.out.println("Enter the electronic bill: ");
-                        double electronicBill = sccnr1.nextDouble();
-                        System.out.println("Enter the water bill: ");
-                        double waterBill = sccnr.nextDouble();
-                        System.out.println("Enter the land lord rent: ");
-                        double landLordRent = sccnr2.nextDouble();
-                        System.out.println("Enter the office salary: ");
-                        double officeSalary = sccnr.nextDouble();
-                        System.out.println("Enter the bank loan: ");
-                        double bankLoan = sccnr1.nextDouble();
-                        System.out.println("Enter the rent income: ");
-                        double rentincome =sccnr2.nextDouble();
-                        Stocking stk1 = new Stocking(feildsalary, electronicBill, waterBill, landLordRent, officeSalary, landLordRent, rentincome, gain);
-                        stokingArray.add(stk1);
-                    }
-                    for(Stocking stk1 : stokingArray){
-                        System.out.println("The Toatal loss is: "+stk1.calcTotalLoss(stk1.getfeildsalary(), stk1.getelectronicbill(), stk1.getwaterbill(), stk1.getlandlordrent(), stk1.getofficesalary(), stk1.getlandlordrent(), stk1.getrentincome()));
-                        System.out.println("The total gains is: "+(stk1.calcTotalLoss(stk1.getfeildsalary(), stk1.getelectronicbill(), stk1.getwaterbill(), stk1.getlandlordrent(), stk1.getofficesalary(), stk1.getlandlordrent(), stk1.getrentincome())-stk1.getGain()));
-                    }
-
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+    case 5:{
+        while(montinu == true){
+        try {
+            System.out.println("Please choose your service: ");
+            System.out.println("1- Add new report");
+            System.out.println("2- View special products list");
+            Scanner scnr79 = new Scanner(System.in);
+            int trans10 = scnr79.nextInt();
+            if (trans10 == 1) {
+                System.out.println("How many reports do you want to add");
+                int scounter = scnr79.nextInt();
+                for (int s = 0; s < scounter; s++) {
+                    Scanner sccnr = new Scanner(System.in);
+                    Scanner sccnr1 = new Scanner(System.in);
+                    Scanner sccnr2 = new Scanner(System.in);
+                    System.out.println("Enter your gain: ");
+                    double gain = sccnr1.nextDouble();
+                    System.out.println("Enter the field salary: ");
+                    double fieldSalary = sccnr.nextDouble();
+                    System.out.println("Enter the electronic bill: ");
+                    double electronicBill = sccnr1.nextDouble();
+                    System.out.println("Enter the water bill: ");
+                    double waterBill = sccnr.nextDouble();
+                    System.out.println("Enter the landlord rent: ");
+                    double landlordRent = sccnr2.nextDouble();
+                    System.out.println("Enter the office salary: ");
+                    double officeSalary = sccnr.nextDouble();
+                    System.out.println("Enter the bank loan: ");
+                    double bankLoan = sccnr1.nextDouble();
+                    System.out.println("Enter the rent income: ");
+                    double rentIncome = sccnr2.nextDouble();
+                    Stocking stk1 = new Stocking(fieldSalary, electronicBill, waterBill, landlordRent, officeSalary, bankLoan, gain);
+                    stokingArray.add(stk1);
                     
-                
                 }
-                
-                
-            }break;
-
-
+                for (Stocking stk1 : stokingArray) {
+                    System.out.println("The Total loss is: " + stk1.calcTotalLoss(stk1.getfeildsalary(), stk1.getelectronicbill(), stk1.getwaterbill(), stk1.getlandlordrent(), stk1.getofficesalary(), stk1.getbankloan()));
+                    System.out.println("The total gains is: " + (stk1.getGain() - stk1.calcTotalLoss(stk1.getfeildsalary(), stk1.getelectronicbill(), stk1.getwaterbill(), stk1.getlandlordrent(), stk1.getofficesalary(), stk1.getbankloan())));
+                }
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter a valid number.");
+        } catch (Exception e) {
+            System.out.println("An error occurred: " + e.getMessage());
+        }
+        System.out.println("Do you want other services in the stoking section(answer in yes or no)");
+        kran555= snr511.nextLine();
+          if (kran555.equals("yes")){
+            montinu = true;
+            }
+          else if(kran555.equals("no")){
+            montinu = false;
+            } 
+        }break;
         
-        
-        
-       }System.out.println("Continue ? (answer in yes or no)");
-       trans1000 = scnr2993.nextLine();
-       if(trans1000.equals("yes")){
-           Continue = true;
-       }else if (trans1000.equals("no")){
-           Continue = false;
-       }
-// the end of menu loop
-       
     }
+         
+
+
+
+
+
+}System.out.println("Continue ? (answer in yes or no)");
+trans1000 = scnr2993.nextLine();
+if(trans1000.equals("yes")){
+   Continue = true;
+}else if (trans1000.equals("no")){
+   Continue = false;
 }
+// the end of menu loop
+
 }
+}}
+
 
     
 

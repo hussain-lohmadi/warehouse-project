@@ -7,7 +7,7 @@ public class Employees{
     private int ID;
     private int position;
     private String title; 
-
+    
     public Employees (){
         
     }
@@ -75,7 +75,6 @@ public class Employees{
     public double calcSalary(int n, int salary){
         this.workShift = n;
         salary = workShift * 50;
-       
         return salary;
 
     }

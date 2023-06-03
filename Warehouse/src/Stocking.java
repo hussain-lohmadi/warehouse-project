@@ -9,19 +9,17 @@ public class Stocking {
     private double waterBill;
     private double landLordRent;
     private double officeSalary;
-    private double rentIncome;
     private double bankLoan;
 
     public Stocking(){
        
     }
-    public Stocking(double fe, double el, double wa, double la, double of, double re, double ba, double g){
+    public Stocking(double fe, double el, double wa, double la, double of, double ba, double g){
         this.feildsalary = fe;
         this.electronicBill=el;
         this.waterBill=wa;
         this.landLordRent=la;
         this.officeSalary=of;
-        this.rentIncome=re;
         this.bankLoan=ba;
         this.gain=g;
     }
@@ -58,21 +56,17 @@ public class Stocking {
         return bankLoan;
     }
 
-    public double getrentincome(){
-        return rentIncome;
-    }
 
     
 
-    public double calcTotalLoss(double fe, double el, double wa, double la, double of, double re, double ba){
+    public double calcTotalLoss(double fe, double el, double wa, double la, double of,double ba){
         this.feildsalary = fe;
         this.electronicBill=el;
         this.waterBill=wa;
         this.landLordRent=la;
         this.officeSalary=of;
-        this.rentIncome=re;
         this.bankLoan=ba;
-        double loss = (feildsalary+electronicBill+waterBill+landLordRent+officeSalary+rentIncome+bankLoan);
+        double loss = (feildsalary+electronicBill+waterBill+landLordRent+officeSalary+bankLoan);
         return loss;
     }
 
@@ -82,21 +76,10 @@ public class Stocking {
         System.out.println("Networth : "+networth);
 
     }
-    // this method will calculate every detal in the wearhouse 
-    public double calcRentincome(double FS, double EB, double WB, double LR, double OS, double BL){
-        this.feildsalary = FS;
-        this.electronicBill = EB;
-        this.waterBill = WB;
-        this.landLordRent = LR;
-        this.officeSalary = OS;
-        this.bankLoan = BL;
-        this.lose = this.feildsalary + this.electronicBill + this.waterBill + this.landLordRent + this.officeSalary + this.bankLoan;
-        this.rentIncome = this.lose;
-        return rentIncome; 
-    }
+    
     // method to output the total
     public void ifmeathod(){
-        if (this.rentIncome > 0){
+        if (this.gain > 0){
             System.out.println("The total gain is : +"+networth);
         }
         else{System.out.println("The total loss is : -"+networth);
